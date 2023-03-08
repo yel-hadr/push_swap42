@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_ARG.c                                     :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/06 17:10:06 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/07 23:17:37 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/17 16:14:52 by yel-hadr          #+#    #+#             */
+/*   Updated: 2022/10/17 16:29:48 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_utile.h"
+#include "libft.h"
 
-int ft_check_arg(char **av, int ac)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int size;
-	// char *arg;
-	(void)av;
-	size = 0;
-	while (ac-- > 1)
+	t_list	*list;
+
+	if (lst && f)
 	{
-		if(!ft_strlen(av[ac]))
-			ft_erour(2);
-		ft_printf("%s\n", av[ac]);
+		list = lst;
+		while (list)
+		{
+			f(list->content);
+			list = list->next;
+		}
 	}
-	return size;
 }

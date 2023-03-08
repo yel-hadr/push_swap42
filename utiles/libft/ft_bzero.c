@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_ARG.c                                     :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/06 17:10:06 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/07 23:17:37 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/01 19:55:28 by yel-hadr          #+#    #+#             */
+/*   Updated: 2022/10/17 12:28:53 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_utile.h"
+#include "libft.h"
 
-int ft_check_arg(char **av, int ac)
+void	ft_bzero(void *s, size_t n)
 {
-	int size;
-	// char *arg;
-	(void)av;
-	size = 0;
-	while (ac-- > 1)
-	{
-		if(!ft_strlen(av[ac]))
-			ft_erour(2);
-		ft_printf("%s\n", av[ac]);
-	}
-	return size;
+	while (n != 0)
+		((unsigned char *)s)[--n] = 0;
 }

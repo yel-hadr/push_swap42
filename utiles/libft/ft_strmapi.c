@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 20:42:58 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/07 20:43:20 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/12 17:29:11 by yel-hadr          #+#    #+#             */
+/*   Updated: 2022/10/17 13:17:49 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_utile.h"
+#include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	int		i;
 	char	*p;
 
-	if (ft_strlen(s) <= start)
-		return (ft_strdup(""));
 	if (!s)
 		return (NULL);
-	if (len > ft_strlen(s))
-		len = ft_strlen(s);
-	p = ft_calloc(len + 1, sizeof(char));
+	i = 0;
+	p = ft_calloc(sizeof(char), ft_strlen(s) + 1);
 	if (!p)
 		return (NULL);
-	ft_memmove(p, &s[start], len);
+	while (s[i])
+	{
+		p[i] = f(i, s[i]);
+		i++;
+	}
 	return (p);
 }
