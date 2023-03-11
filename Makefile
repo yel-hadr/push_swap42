@@ -2,7 +2,7 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 LIBFT = ./utiles/printf/libftprintf.a ./utiles/libft/libft.a
-SRC = push_swap.c ./utiles/rule.c ./utiles/ft_Erour.c ./utiles/ft_check_ARG.c
+SRC = push_swap.c ./utiles/rule.c ./utiles/ft_Erour.c ./utiles/ft_check_ARG.c ./utiles/fill_arry.c
 OBJ = $(SRC:.c=.o)
 
 %.o: %.c

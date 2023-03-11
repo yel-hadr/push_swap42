@@ -6,13 +6,13 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:10:06 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/10 21:20:20 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/11 10:56:17 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_utile.h"
 
-int ft_is_valid(char *arg)
+static int ft_is_valid(char *arg)
 {
 	char *ptr;
 
@@ -32,7 +32,7 @@ int ft_is_valid(char *arg)
 	return (1);
 }
 
-int check_arg(char **av)
+static int check_arg(char **av)
 {
 	int i;
 
@@ -63,6 +63,7 @@ int ft_check_arg(char **av, int ac)
 		else
 			ft_erour(2);
 	}
-	ft_printf ("%d \n", size);
+	if(size < 3)
+		exit(0);
 	return (size);
 }
