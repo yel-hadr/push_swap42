@@ -10,13 +10,13 @@ OBJ = $(SRC:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	ar rcs $(NAME) $^
+	@ar rcs $(NAME) $^
 
 clean :
-	rm -f *.o
+	@rm -rf $(OBJ)
 
-fclean :
-	rm -rf *.o *.a
+fclean : clean
+	@rm -rf $(NAME)
 
 re : fclean all
 

@@ -23,16 +23,16 @@ all : $(NAME)
 bonus : $(NAME) $(OBJBONUS)
 
 $(NAME) : $(OBJ)
-	ar rcs $(NAME) $^
+	@ar rcs $(NAME) $^
 
 .o : $(SRC) $(BONUS)
-	$(CC) $(FLAGS) -c $^
+	@$(CC) $(FLAGS) -c $^
 
 clean :
-	rm -f *.o
+	@rm -f $(OBJ) $(OBJBONUS)
 
-fclean :
-	rm -rf *.o *.a
+fclean : clean
+	@rm -rf $(NAME)
 
 re : fclean all
 
