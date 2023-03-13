@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_fill_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/06 17:02:11 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/13 21:57:23 by yel-hadr         ###   ########.fr       */
+/*   Created: 2023/03/13 19:37:02 by yel-hadr          #+#    #+#             */
+/*   Updated: 2023/03/13 20:23:17 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_utile.h"
 
-int main(int ac, char **av)
+void	fill_stack(int *arry, int size, t_stack *a, t_stack *b)
 {
-	if(ac == 1)
-		return(1);
-	int *arry;
-	int size;
-	t_stack a;
-	t_stack	b;
-	
-
-	arry = NULL;
-	size = ft_check_arg(av, ac, &arry);
-	fill_stack(arry, size, &a, &b);
-	while (size--)
-		ft_printf("tab[%d] = %d\n",size ,a.arry[size]);
+	if (!arry)
+		return ;
+	a->arry = ft_calloc(sizeof(int), size);
+	b->arry = ft_calloc(sizeof(int), size);
+	if (!a->arry || !b->arry)
+		return ;
+	a->size = size;
+	b->size = size;
+	ft_memmove(a->arry, arry, size * sizeof(int));
 }

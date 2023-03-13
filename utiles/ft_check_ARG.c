@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:10:06 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/11 23:34:14 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/13 16:48:30 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int check_arg(char **av)
 	return i;
 }
 
-int ft_check_arg(char **av, int ac)
+int ft_check_arg(char **av, int ac, int **arry)
 {
 	int size;
 	int i;
@@ -64,6 +64,6 @@ int ft_check_arg(char **av, int ac)
 			ft_erour(2);
 	}
 	if(size > 1)
-		fill_arry(av, size);
+		fill_arry(av, size, arry);
 	return (size);
 }

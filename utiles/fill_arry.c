@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 10:56:55 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/12 11:05:38 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/13 16:46:56 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,20 @@ static int ft_split_arg(int *arry, int *i, char **av)
 	return (*i);
 }
 
-int	*fill_arry(char **av, int size)
+int	*fill_arry(char **av, int size, int **arry)
 {
 	if (!av)
 		return (NULL);
-	int *arry;
 	int i;
 
-	arry = ft_calloc(size, sizeof(int));
+	*arry = ft_calloc(size, sizeof(int));
 	i = 0;
 	if(!arry)
 		return (NULL);
 	if (*av++)
 	while (i < size)
 	{
-		ft_split_arg(arry, &i, ft_split(*av++, ' '));
+		ft_split_arg(*arry, &i, ft_split(*av++, ' '));
 	}
-	return (arry);
+	return (*arry);
 }
