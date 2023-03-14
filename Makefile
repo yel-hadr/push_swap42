@@ -6,16 +6,13 @@ SRC = push_swap.c ./utiles/ft_Erour.c ./utiles/ft_check_ARG.c \
 		./utiles/fill_arry.c ./utiles/ft_fill_stack.c
 OBJ = $(SRC:.c=.o)
 
-%.o: %.c
-	@${CC} ${CFLAGS} -c $< -o $@
-
 all		: util $(NAME)
 
 $(NAME) : $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT)  -o $(NAME)
 
 util	:
-	@make -C ./utiles/libft bonus
+	@make -C ./utiles/libft
 	@make -C ./utiles/printf
 
 clean	:
