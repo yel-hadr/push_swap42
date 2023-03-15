@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 18:31:53 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/13 18:34:03 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/15 19:49:51 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,21 @@
 # include "../printf/ft_printf.h"
 # include "../libft/libft.h"
 
+typedef struct s_stack
+{
+	int		size;
+	int		*top;
+	int		*end;
+	int		*arry;
+}	t_stack;
+
 void	ft_swap(int *a, int *b);
+void	ss(t_stack *a, t_stack *b);
+void	sb(t_stack *b);
+void	sa(t_stack *a);
+void	pa(t_stack *a, t_stack *b);
+void	pb(t_stack *a, t_stack *b);
+void	ra(t_stack *a);
+void	rb(t_stack *b);
 
 #endif

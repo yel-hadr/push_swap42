@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:02:52 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/13 20:09:52 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/14 19:45:00 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,7 @@
 # include <stdio.h>
 # include "./printf/ft_printf.h"
 # include "./libft/libft.h"
-
-typedef struct s_stack
-{
-	int		size;
-	int		*arry;
-}	t_stack;
-
+# include "./rules/ft_rule.h"
 
 void	ft_erour(int fd);
 int		ft_check_arg(char **av, int ac, int **arry);

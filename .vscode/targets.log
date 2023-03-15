@@ -8,11 +8,10 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Tue Mar 14 12:20:39 2023
+# Make data base, printed on Wed Mar 15 21:46:25 2023
 
 # Variables
 
- 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -46,7 +45,7 @@ PATH = /Users/yel-hadr/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/u
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-LaunchInstanceID = 922AE0BA-E44F-41E3-84DB-7478B6E9EC5C
+LaunchInstanceID = 0AEACE3B-3956-42BB-9089-85FD791D21A4
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
@@ -54,7 +53,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 LS_COLORS = di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=37;41:sg=30;43:tw=30;42:ow=34;42:
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.zELmGDQ3dV/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.i3h0MgAu6R/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -92,7 +91,7 @@ HOMEBREW_CACHE = /tmp/yel-hadr/Homebrew/Caches
 # environment
 SHLVL = 1
 # makefile (from `Makefile', line 4)
-LIBFT = ./utiles/printf/libftprintf.a ./utiles/libft/libft.a
+LIBFT = ./utiles/printf/libftprintf.a ./utiles/libft/libft.a ./utiles/rules/librule.a
 # makefile (from `Makefile', line 2)
 CC = cc
 # default
@@ -158,7 +157,7 @@ CLICOLOR = 1
 # environment
 LANG = C
 # environment
-VSCODE_PID = 1032
+VSCODE_PID = 990
 # variable set hash-table stats:
 # Load=73/1024=7%, Rehash=0, Collisions=3/103=3%
 
@@ -168,18 +167,13 @@ VSCODE_PID = 1032
 
 # Directories
 
-# . (device 16777225, inode 4108451): 9 files, no impossibilities.
+# . (device 16777225, inode 4108451): 11 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 11 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
-%.o: %.c
-#  commands to execute (from `Makefile', line 10):
-	@${CC} ${CFLAGS} -c $< -o $@
-	
-
-# 1 implicit rules, 0 (0.0%) terminal.
+# No implicit rules.
 
 # Files
 
@@ -213,7 +207,7 @@ all: util push_swap
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2023-03-14 12:13:17
+#  Last modified 2023-03-15 19:11:43
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -223,10 +217,11 @@ fclean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 27):
+#  commands to execute (from `Makefile', line 26):
 	@rm -rf $(OBJ) $(NAME)
 	@make -C ./utiles/libft fclean
 	@make -C ./utiles/printf fclean
+	@make -C ./utiles/rules fclean
 	
 
 # Not a target:
@@ -244,10 +239,11 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 22):
+#  commands to execute (from `Makefile', line 20):
 	@rm -f $(OBJ)
 	@make -C ./utiles/libft clean
 	@make -C ./utiles/printf clean
+	@make -C ./utiles/rules clean
 	
 
 # Not a target:
@@ -260,7 +256,7 @@ push_swap: push_swap.o utiles/ft_Erour.o utiles/ft_check_ARG.o utiles/fill_arry.
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 12):
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT)  -o $(NAME)
 	
 
@@ -300,9 +296,10 @@ util:
 # ? := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/10=10%
-#  commands to execute (from `Makefile', line 18):
+#  commands to execute (from `Makefile', line 15):
 	@make -C ./utiles/libft
 	@make -C ./utiles/printf
+	@make -C ./utiles/rules
 	
 
 # files hash-table stats:
@@ -318,6 +315,6 @@ util:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Mar 14 12:20:39 2023
+# Finished Make data base on Wed Mar 15 21:46:25 2023
 
  

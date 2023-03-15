@@ -25,9 +25,6 @@ bonus : $(NAME) $(OBJBONUS)
 $(NAME) : $(OBJ)
 	@ar rcs $(NAME) $^
 
-.o : $(SRC) $(BONUS)
-	@$(CC) $(FLAGS) -c $^
-
 clean :
 	@rm -f $(OBJ) $(OBJBONUS)
 
