@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 12:46:12 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/18 20:23:50 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/19 21:21:28 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,72 @@
 static int ft_rank(int size)
 {
 	int nb;
-	nb = (double)((double)size * 0.00375) + 11.25;
-	return nb;
+	if (size > 200)
+		nb = size / 15;
+	else
+		nb = ((double)size * 0.00375) + 11.25;
+	 return (size * 0.0375 + 11.25);
+}
+
+int		find_the_big(int *arry, int size,int nb)
+{
+	int i;
+	int j;
+	i = 0;
+	j = ++size;
+	while (--j)
+	{
+		if (nb == arry[i++])
+			return (i - 1);
+		if (nb == arry[j])
+			return (j - size);
+	}
+	return 0;
+}
+
+void 	sorting_stack_b(t_stack *a, t_stack *b, int *arry, int size)
+{
+	int i;
+	while (b->top <= b->end)
+	{
+		i = find_the_big(b->top, b->end - b->top, arry[--size]);
+		if  (i > 0)
+		{
+			while (i--)
+			{
+				rb(b);
+				ft_printf("rb\n");
+			}
+		}
+		else if (i < 0)
+		{
+			while (i)
+			{
+				rrb(b);
+				ft_printf("rrb\n");
+				i++;
+			}
+		}
+		pa(a, b);
+		ft_printf("pa\n");
+	}
 }
 
 void	sorting_stack(t_stack *a, t_stack *b, int *arry, int size)
 {
 	int i;
 	int end;
-	int start = 0;
+	int start;
 	int range;
 
 	i = 0;
+	start = 0;
 	range = ft_rank(size);
 	if (range > size)
-		range = size / 2;
+		range = size - 1;
 	while(i < size)
 	{
-		end = i + 30;
+		end = i + range;
 		if (end >= size)
 			end = size - 1;
 		else
@@ -41,8 +89,7 @@ void	sorting_stack(t_stack *a, t_stack *b, int *arry, int size)
 		{
 			pb(a, b);
 			rb(b);
-			ft_printf("pb\n");
-			ft_printf("rb\n");
+			ft_printf("pb\nrb\n");
 			i++;
 		}
 		else if (*a->top >= arry[start] && *a->top <= arry[end])
@@ -57,4 +104,5 @@ void	sorting_stack(t_stack *a, t_stack *b, int *arry, int size)
 			ft_printf("ra\n");
 		}
 	}
+	sorting_stack_b(a, b , arry , size);
 }
