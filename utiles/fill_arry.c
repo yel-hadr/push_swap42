@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 10:56:55 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/14 17:45:59 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/18 17:36:32 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ static int ft_check_double(int *arry, int i, int num)
 	return (1);
 }
 
-static int ft_split_arg(int *arry, int *i, char **av, int size)
+static int ft_split_arg(int *arry, int *i, char **av)
 {
 	long int	tmp;
 	while (*av)
 	{
 		tmp = ft_atoi(*av++);
-		if (tmp > INT_MAX || tmp < INT_MIN || !ft_check_double(arry + *i, size - *i , tmp))
+		if (tmp > INT_MAX || tmp < INT_MIN || !ft_check_double(arry, *i, tmp))
 			ft_erour(2);
-		arry[--(*i)] = (int)tmp;
+		arry[(*i)++] = (int)tmp;
 	}
 	return (*i);
 }
@@ -44,12 +44,12 @@ int	*fill_arry(char **av, int size, int **arry)
 	int i;
 
 	*arry = ft_calloc(size, sizeof(int));
-	i = size;
+	i = 0;
 	if(!arry)
 		return (NULL);
-	while (i)
+	while (i < size)
 	{
-		ft_split_arg(*arry, &i, ft_split(*av++, ' '), size);
+		ft_split_arg(*arry, &i, ft_split(*av++, ' '));
 	}
 	return (*arry);
 }

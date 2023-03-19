@@ -1,33 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss.c                                               :+:      :+:    :+:   */
+/*   rrr.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 17:46:32 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/18 14:36:07 by yel-hadr         ###   ########.fr       */
+/*   Created: 2023/03/15 22:25:32 by yel-hadr          #+#    #+#             */
+/*   Updated: 2023/03/16 10:57:37 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_rule.h"
 
-void	sa(t_stack *a)
+void	rra(t_stack *a)
 {
-	if (a->top == a->end)
-		return ;
-	ft_swap(a->top, a->top + 1);
+	int tmp;
+	int *end;
+	
+	tmp = *a->end;
+	end = a->end;
+	while (end >= a->top)
+	{
+		if (end == a->top)
+			*a->top = tmp;
+		else
+			*end = *(end - 1);
+		end--;
+	}
 }
 
-void	sb(t_stack *b)
+void	rrb(t_stack *b)
 {
-	if (b->top == b->end)
-		return ;
-	ft_swap(b->top, b->top + 1);
+	int tmp;
+	int *end;
+	
+	tmp = *b->end;
+	end = b->end;
+	while (end >= b->top)
+	{
+		if (end == b->top)
+			*b->top = tmp;
+		else
+			*end = *(end - 1);
+		end--;
+	}
 }
-
-void	ss(t_stack *a, t_stack *b)
+void	rrr(t_stack *a, t_stack *b)
 {
-	sa(a);
-	sb(b);
+	rra(a);
+	rrb(b);
 }

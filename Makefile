@@ -3,7 +3,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 LIBFT = ./utiles/printf/libftprintf.a ./utiles/libft/libft.a ./utiles/rules/librule.a
 SRC = push_swap.c ./utiles/ft_Erour.c ./utiles/ft_check_ARG.c \
-		./utiles/fill_arry.c ./utiles/ft_fill_stack.c
+		./utiles/fill_arry.c ./utiles/ft_fill_stack.c ./utiles/sorting.c ./utiles/sorting_stack.c
 OBJ = $(SRC:.c=.o)
 
 all		: util $(NAME)

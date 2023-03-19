@@ -1,9 +1,0 @@
-{
-	"makefile.extensionOutputFolder": "./.vscode",
-	"files.associations": {
-		"ft_utile.h": "c",
-		"ft_rule.h": "c",
-		"ft_printf.h": "c",
-		"libft.h": "c"
-	}
-}

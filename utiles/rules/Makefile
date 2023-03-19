@@ -1,7 +1,7 @@
 NAME = librule.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRC = ss.c swap.c pb.c pa.c rr.c
+SRC = ss.c swap.c pb.c pa.c rr.c rrr.c
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME)
