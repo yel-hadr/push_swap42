@@ -1,0 +1,15 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/yel-hadr/Desktop/push_swap42'
+make -C ./utiles/libft
+make -C ./utiles/printf
+make -C ./utiles/rules
+cc -Wall -Wextra -Werror   -c -o push_swap.o push_swap.c
+cc -Wall -Wextra -Werror   -c -o utiles/ft_Erour.o utiles/ft_Erour.c
+cc -Wall -Wextra -Werror   -c -o utiles/ft_check_ARG.o utiles/ft_check_ARG.c
+cc -Wall -Wextra -Werror   -c -o utiles/fill_arry.o utiles/fill_arry.c
+cc -Wall -Wextra -Werror   -c -o utiles/ft_fill_stack.o utiles/ft_fill_stack.c
+cc -Wall -Wextra -Werror   -c -o utiles/sorting.o utiles/sorting.c
+cc -Wall -Wextra -Werror   -c -o utiles/sorting_stack.o utiles/sorting_stack.c
+cc -Wall -Wextra -Werror push_swap.o ./utiles/ft_Erour.o ./utiles/ft_check_ARG.o ./utiles/fill_arry.o ./utiles/ft_fill_stack.o ./utiles/sorting.o ./utiles/sorting_stack.o ./utiles/printf/libftprintf.a ./utiles/libft/libft.a ./utiles/rules/librule.a  -o push_swap
+make: Leaving directory `/Users/yel-hadr/Desktop/push_swap42'
+ 

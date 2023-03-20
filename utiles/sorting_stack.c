@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 12:46:12 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/20 15:12:40 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/20 23:45:47 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,22 +42,17 @@ void 	sorting_stack_b(t_stack *a, t_stack *b, int *arry, int size)
 		if  (i > 0)
 		{
 			while (i--)
-			{
-				rb(b);
-				ft_printf("rb\n");
-			}
+				ft_rule(a, b, "rb\n");
 		}
 		else if (i < 0)
 		{
 			while (i)
 			{
-				rrb(b);
-				ft_printf("rrb\n");
+				ft_rule(a, b, "rrb\n");
 				i++;
 			}
 		}
-		pa(a, b);
-		ft_printf("pa\n");
+		ft_rule(a, b, "pa\n");
 	}
 }
 
@@ -71,10 +66,10 @@ void	sorting_stack(t_stack *a, t_stack *b, int *arry, int size)
 	i = 0;
 	start = 0;
 	range = ft_rank(size);
-	if (range > size)
-		range = size - 1;
+	
 	while(i < size)
 	{
+		range = ft_rank(size);
 		end = i + range;
 		if (end >= size)
 			end = size - 1;
@@ -83,54 +78,29 @@ void	sorting_stack(t_stack *a, t_stack *b, int *arry, int size)
 		if ((*a->top >= arry[start] && *a->top <= arry[end]) || (*a->end >= arry[start] && *a->end <= arry[end]))
 		{
 			if (*a->top >= arry[start] && *a->top <= arry[end])
-			{
-				pb(a,b);
-				ft_printf("pb\n");
-				i++;
-			}
+				ft_rule(a, b, "pb\n");
 			else if((*a->end >= arry[start] && *a->end <= arry[end]))
 			{
-				rra(a);
-				pb(a,b);
-				ft_printf("rra\npb\n");
-				i++;
+				ft_rule(a, b, "rra\n");
+				ft_rule(a, b, "pb\n");
 			}
+			i++;
 		}
 		else if (*a->top < arry[start] || *a->end < arry[start])
 		{
 			if (*a->top < arry[start])
 			{
-				pb(a, b);
-				rb(b);
-				ft_printf("pb\nrb\n");
+				ft_rule(a, b, "pb\n");
+				ft_rule(a, b, "rb\n");
 				i++;
 			}
 			else if (*a->end < arry[start])
-			{
-				rra(a);
-				ft_printf("rra\n");
-			}
+				ft_rule(a, b, "rra\n");
 		}
 		else
-		{
-			ra(a);
-			ft_printf("ra\n");
-		}
-		if (*b->top < *(b->top + 1))
-		{
-			sb(b);
-			ft_printf("sb\n");
-			if(*b->top < *b->end)
-			{
-				rrb(b);
-				ft_printf("rrb\n");
-			}
-		}
-		if(*b->top < *b->end)
-		{
-			rrb(b);
-			ft_printf("rrb\n");
-		}
+			ft_rule(a, b, "ra\n");
+		while(*b->top < *b->end && *b->top + 3 < *b->end)
+			ft_rule(a, b, "rrb\n");
 	}
 	sorting_stack_b(a, b , arry , size);
 }

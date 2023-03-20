@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 18:31:53 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/16 11:20:27 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/20 19:14:25 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
+void	ft_rule(t_stack *a,t_stack *b, char *str);
 
 #endif
