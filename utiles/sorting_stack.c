@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 12:46:12 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/20 12:59:54 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/20 15:12:40 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,21 @@ void	sorting_stack(t_stack *a, t_stack *b, int *arry, int size)
 		{
 			ra(a);
 			ft_printf("ra\n");
+		}
+		if (*b->top < *(b->top + 1))
+		{
+			sb(b);
+			ft_printf("sb\n");
+			if(*b->top < *b->end)
+			{
+				rrb(b);
+				ft_printf("rrb\n");
+			}
+		}
+		if(*b->top < *b->end)
+		{
+			rrb(b);
+			ft_printf("rrb\n");
 		}
 	}
 	sorting_stack_b(a, b , arry , size);
