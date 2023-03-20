@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 10:56:55 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/18 17:36:32 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/19 22:57:10 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int ft_split_arg(int *arry, int *i, char **av)
 	{
 		tmp = ft_atoi(*av++);
 		if (tmp > INT_MAX || tmp < INT_MIN || !ft_check_double(arry, *i, tmp))
-			ft_erour(2);
+			ft_erour();
 		arry[(*i)++] = (int)tmp;
 	}
 	return (*i);

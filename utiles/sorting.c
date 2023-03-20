@@ -6,13 +6,13 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 19:27:58 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/18 14:53:53 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/19 23:21:16 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_utile.h"
 
-void	sorting_arry(int **arr, int size)
+void	sorting_arry(t_stack a,int **arr, int size)
 {
 	int i;
 	int j;
@@ -31,4 +31,6 @@ void	sorting_arry(int **arr, int size)
 		}
 		i++;
 	}
+	if (!ft_memcmp(a.arry, arry, size * sizeof(int)))
+		exit(0);
 }

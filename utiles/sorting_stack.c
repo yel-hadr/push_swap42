@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 12:46:12 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/19 21:21:28 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/20 12:59:54 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 
 static int ft_rank(int size)
 {
-	int nb;
-	if (size > 200)
-		nb = size / 15;
-	else
-		nb = ((double)size * 0.00375) + 11.25;
-	 return (size * 0.0375 + 11.25);
+	return (size * 0.0375 + 11.25);
 }
 
 int		find_the_big(int *arry, int size,int nb)
@@ -85,18 +80,36 @@ void	sorting_stack(t_stack *a, t_stack *b, int *arry, int size)
 			end = size - 1;
 		else
 			start = i;
-		if (*a->top < arry[start])
+		if ((*a->top >= arry[start] && *a->top <= arry[end]) || (*a->end >= arry[start] && *a->end <= arry[end]))
 		{
-			pb(a, b);
-			rb(b);
-			ft_printf("pb\nrb\n");
-			i++;
+			if (*a->top >= arry[start] && *a->top <= arry[end])
+			{
+				pb(a,b);
+				ft_printf("pb\n");
+				i++;
+			}
+			else if((*a->end >= arry[start] && *a->end <= arry[end]))
+			{
+				rra(a);
+				pb(a,b);
+				ft_printf("rra\npb\n");
+				i++;
+			}
 		}
-		else if (*a->top >= arry[start] && *a->top <= arry[end])
+		else if (*a->top < arry[start] || *a->end < arry[start])
 		{
-			pb(a,b);
-			ft_printf("pb\n");
-			i++;
+			if (*a->top < arry[start])
+			{
+				pb(a, b);
+				rb(b);
+				ft_printf("pb\nrb\n");
+				i++;
+			}
+			else if (*a->end < arry[start])
+			{
+				rra(a);
+				ft_printf("rra\n");
+			}
 		}
 		else
 		{

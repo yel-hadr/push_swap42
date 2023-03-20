@@ -6,14 +6,14 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 19:16:30 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/07 23:16:18 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/19 22:57:46 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_utile.h"
 
-void	ft_erour(int fd)
+void	ft_erour(void)
 {
-	ft_putstr_fd("Error", fd);
+	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }
