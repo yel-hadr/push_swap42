@@ -2,7 +2,6 @@ make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/yel-hadr/Desktop/push_swap42'
 make -C ./utiles/libft
 make -C ./utiles/printf
- 
 make -C ./utiles/rules
 make -C ./utiles/get_next_line
 cc -Wall -Wextra -Werror   -c -o utiles/ft_Erour.o utiles/ft_Erour.c

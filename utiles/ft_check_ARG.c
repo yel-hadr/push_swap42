@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:10:06 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/23 01:01:42 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/23 05:10:09 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,17 @@ static int	ft_is_valid(char *arg)
 			return (0);
 		arg++;
 	}
+	free(ptr);
 	return (1);
 }
 
 static int	check_arg(char **av)
 {
-	int	i;
+	int		i;
+	char	**ptr;
 
 	i = 0;
+	ptr = av;
 	if (!av)
 		return (0);
 	while (*av)
@@ -48,6 +51,7 @@ static int	check_arg(char **av)
 			ft_erour();
 		i++;
 	}
+	free (ptr);
 	return (i);
 }
 

@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Thu Mar 23 00:43:19 2023
+# Make data base, printed on Thu Mar 23 05:04:46 2023
 
 # Variables
 
@@ -45,13 +45,13 @@ VSCODE_CWD = /
 # environment
 PATH = /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 # environment
-LaunchInstanceID = 690B4A9A-128D-4D9F-92DA-D641CE87DEFA
+LaunchInstanceID = C633BAC8-AF34-4AF4-8D76-6CD1FDDC2A8F
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.HzIILsYKuQ/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.CEAQiBFpzW/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -151,7 +151,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 5465
+VSCODE_PID = 3820
 # variable set hash-table stats:
 # Load=70/1024=7%, Rehash=0, Collisions=6/108=6%
 
@@ -161,9 +161,9 @@ VSCODE_PID = 5465
 
 # Directories
 
-# . (device 16777225, inode 4108451): 12 files, no impossibilities.
+# . (device 16777225, inode 4108451): 10 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 10 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -344,6 +344,6 @@ utiles/sorting_stack.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Mar 23 00:43:19 2023
+# Finished Make data base on Thu Mar 23 05:04:46 2023
 
  
