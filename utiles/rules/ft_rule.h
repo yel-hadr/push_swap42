@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 18:31:53 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/20 19:14:25 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/22 18:52:36 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
-void	ft_rule(t_stack *a,t_stack *b, char *str);
+void	ft_rule(t_stack *a, t_stack *b, char *str);
+int		find_the_big(int *arry, int size, int nb);
+int		ft_rank(int size);
 
 #endif

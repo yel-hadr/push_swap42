@@ -6,27 +6,26 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 10:56:55 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/19 22:57:10 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/22 18:20:44 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_utile.h"
 
-static int ft_check_double(int *arry, int i, int num)
+static int	ft_check_double(int *arry, int i, int num)
 {
 	if (!arry)
 		return (0);
 	while (i--)
-		if(num == arry[i])
-		{
+		if (num == arry[i])
 			return (0);
-		}
 	return (1);
 }
 
-static int ft_split_arg(int *arry, int *i, char **av)
+static int	ft_split_arg(int *arry, int *i, char **av)
 {
 	long int	tmp;
+
 	while (*av)
 	{
 		tmp = ft_atoi(*av++);
@@ -39,13 +38,13 @@ static int ft_split_arg(int *arry, int *i, char **av)
 
 int	*fill_arry(char **av, int size, int **arry)
 {
+	int	i;
+
 	if (!av)
 		return (NULL);
-	int i;
-
 	*arry = ft_calloc(size, sizeof(int));
 	i = 0;
-	if(!arry)
+	if (!arry)
 		return (NULL);
 	while (i < size)
 	{

@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 19:13:36 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/20 19:21:10 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/22 18:09:54 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ra(t_stack *a)
 {
 	int	tmp;
-	int *top;
+	int	*top;
 
 	tmp = *a->top;
 	top = a->top;
@@ -32,7 +32,7 @@ void	ra(t_stack *a)
 void	rb(t_stack *b)
 {
 	int	tmp;
-	int *top;
+	int	*top;
 
 	tmp = *b->top;
 	top = b->top;

@@ -1,6 +1,12 @@
 {
 	"files.associations": {
 		"algorithm": "c",
-		"random": "c"
+		"random": "c",
+		"push_swap.h": "c",
+		"ft_utile.h": "c",
+		"ft_printf.h": "c",
+		"get_next_line.h": "c",
+		"ft_rule.h": "c",
+		"libft.h": "c"
 	}
 }

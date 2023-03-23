@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rule.c                                             :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 19:02:59 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/22 18:12:30 by yel-hadr         ###   ########.fr       */
+/*   Created: 2023/03/21 10:54:54 by yel-hadr          #+#    #+#             */
+/*   Updated: 2023/03/22 18:57:51 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_rule.h"
+#include "push_swap.h"
 
-void	ft_rule(t_stack *a, t_stack *b, char *str)
+static void	do_rule(t_stack *a, t_stack *b, char *str)
 {
 	if (!ft_strncmp(str, "ra\n", ft_strlen(str)))
 		ra(a);
@@ -36,5 +36,33 @@ void	ft_rule(t_stack *a, t_stack *b, char *str)
 		sa(a);
 	else if (!ft_strncmp(str, "sb\n", ft_strlen(str)))
 		sb(b);
-	ft_putstr_fd(str, 1);
+	else
+		ft_erour();
+}
+
+int	main(int ac, char **av)
+{
+	t_stack	a;
+	t_stack	b;
+	int		*arry;
+	int		size;
+	char	*str;
+
+	if (ac == 1)
+		return (1);
+	arry = NULL;
+	size = ft_check_arg(av, ac, &arry);
+	fill_stack(arry, size, &a, &b);
+	sorting_arry(a, &arry, size);
+	str = get_next_line(0);
+	while (str)
+	{
+		do_rule(&a, &b, str);
+		str = get_next_line(0);
+	}
+	if (ft_memcmp(a.arry, arry, size * sizeof(int)))
+		ft_printf("KO\n");
+	else
+		ft_printf("OK\n");
+	return (0);
 }

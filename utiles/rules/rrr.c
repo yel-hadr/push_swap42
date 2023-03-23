@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 22:25:32 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/03/20 12:07:46 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/03/22 18:10:57 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	rra(t_stack *a)
 {
-	int tmp;
-	int *end;
-	
+	int	tmp;
+	int	*end;
+
 	if (a->end < a->top)
 		return ;
 	tmp = *a->end;
@@ -33,9 +33,9 @@ void	rra(t_stack *a)
 
 void	rrb(t_stack *b)
 {
-	int tmp;
-	int *end;
-	
+	int	tmp;
+	int	*end;
+
 	if (b->end < b->top)
 		return ;
 	tmp = *b->end;
@@ -49,6 +49,7 @@ void	rrb(t_stack *b)
 		end--;
 	}
 }
+
 void	rrr(t_stack *a, t_stack *b)
 {
 	rra(a);
